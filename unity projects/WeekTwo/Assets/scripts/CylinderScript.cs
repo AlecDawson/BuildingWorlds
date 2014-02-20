@@ -71,6 +71,19 @@ public class CylinderScript : MonoBehaviour {
 			}
 		}
 
+		else if (currentRoom == "deny") {
+			GetComponent<TextMesh>().text = "Ask him what he wants to talk about [Z]";
+			GetComponent<TextMesh>().text += "\nTake a sip from your drink [S]";
+			
+			if (Input.GetKeyDown (KeyCode.Z)) {
+				currentRoom = "talkOne";
+			}
+			
+			if (Input.GetKeyDown (KeyCode.S)) {
+				currentRoom = "talkTwo";
+			}
+		}
+
 		else if (currentRoom == "talkOne") {
 			GetComponent<TextMesh>().text = "'So I want to hear about your experiences with other men.";
 			GetComponent<TextMesh>().text += "\nDon't worry I'm not trying to hook up with you.'";
@@ -106,7 +119,7 @@ public class CylinderScript : MonoBehaviour {
 
 		else if (currentRoom == "telling") {
 			GetComponent<TextMesh>().text = "You tell him, uncomfortable not because of what you say,";
-			GetComponent<TextMesh>().text += "\nbut because of his gaze. A wolf on the hunt.";
+			GetComponent<TextMesh>().text += "\nbut because of his gaze. A dog on the hunt.";
 			GetComponent<TextMesh>().text += "\n'I want to help you with this.'";
 			GetComponent<TextMesh>().text += "\nTell him you have to sleep [V]";
 			GetComponent<TextMesh>().text += "\nReflect his advances [I]";
@@ -218,7 +231,7 @@ public class CylinderScript : MonoBehaviour {
 		}
 
 		else if ( currentRoom == "textSleep" ) {
-			GetComponent<TextMesh>().text = "'Can I suck your dick?'";
+			GetComponent<TextMesh>().text = "'Can I pleasure you?'";
 			GetComponent<TextMesh>().text += "\n'Leave your door unlocked so I can sneak in ;)'";
 			GetComponent<TextMesh>().text += "\nThree knocks filled with anticipation, he waits.";
 			GetComponent<TextMesh>().text += "\nHe begins picking the lock, the booze saves you, again.";
